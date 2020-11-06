@@ -1,0 +1,26 @@
+.bgcolor{
+    // background-color: #00C292;
+    --ion-background-color:#00C292;
+}
+.color{
+    --ion-colors-primary:#ffffff;
+    color: var(--ion-colors-primary);
+
+}
+.but{
+    font-size: 11px;
+}
+.but2{
+    font-size: 12px;
+}
+
+
+// ion-button.button-disabled {
+//     --opacity: 1;
+//  }
+
+ion-datetime.native-input:disabled{
+    --opacity:1 ;
+ }
+
+ 

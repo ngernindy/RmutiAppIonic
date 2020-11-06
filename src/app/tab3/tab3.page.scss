@@ -1,0 +1,30 @@
+.bgcolor{
+    // background-color: #00C292;
+    --ion-background-color:#00C292;
+}
+.color{
+    --ion-colors-primary:#ffffff;
+    color: var(--ion-colors-primary);
+
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+  }
+
+  .colorred{
+    --ion-colors-primary:red;
+    color: var(--ion-colors-primary);
+
+}
+
+.btn {
+    display:block;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    border: 1px solid red;
+    
+  }

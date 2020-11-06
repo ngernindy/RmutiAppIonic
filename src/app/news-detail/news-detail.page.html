@@ -1,0 +1,28 @@
+<ion-toolbar class="bgcolor color">
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/tabs/tab2"></ion-back-button>
+  </ion-buttons>
+  <ion-title>รายละเอียดข่าว</ion-title>
+</ion-toolbar>
+
+<ion-content>
+  
+  
+  <!-- <ion-img src="http://192.168.1.107/WebProject/news_image/{{news_filename}}"></ion-img> -->
+  <ion-img src="http://192.168.43.170/WebProject/news_image/{{news_filename}}"></ion-img>
+
+
+  <ion-card>
+      <ion-card-header>
+          <ion-card-subtitle>{{news_date}}</ion-card-subtitle>
+        <ion-card-title>{{news_topic}}</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+          {{news_detail }}
+      </ion-card-content>
+    </ion-card>
+
+
+
+</ion-content>

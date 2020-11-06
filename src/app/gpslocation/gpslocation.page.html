@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>gpslocation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  lat:{{lat1}}
+  long:{{lon1}}
+  <br>
+  <!-- wlat:{{wlat}}
+  wlong:{{wlong}} -->
+  <ion-button color="success" (click)="caldistance()">คำนวณ</ion-button>
+
+  <ion-button (click)="change()">
+    CHANGE
+</ion-button>
+
+    <ion-button [disabled]="disabled" (click)="action()">555
+    </ion-button>
+
+
+
+</ion-content>

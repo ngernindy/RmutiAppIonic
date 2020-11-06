@@ -1,0 +1,10 @@
+
+.bgcolor{
+    // background-color: #00C292;
+    --ion-background-color:#00C292;
+}
+.color{
+    --ion-colors-primary:#ffffff;
+    color: var(--ion-colors-primary);
+
+}

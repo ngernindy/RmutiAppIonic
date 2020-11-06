@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar class="bgcolor color"> 
+    <ion-title>ยืนยันกิจกรรม</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <!-- <ion-card *ngFor="let item of join">
+        
+
+    <ion-button  expand="full" color="primary"  (click)="openCamera(item.join_id)">cam</ion-button>      
+    <ion-button  expand="full" color="primary"  (click)="gallery(item.join_id)">ga</ion-button>
+    </ion-card> -->
+    <br>
+    <div class="center2"><b>ครั้งที่ 1</b></div>
+
+
+    <!-- <div *ngFor="let item of join">
+      <ion-icon name="camera" class="center2" (click)="presentActionSheet(item.join_id)"></ion-icon>
+    </div> -->
+    
+      <div id="wrapper" *ngFor="let item of join">
+        
+          <a class="my-super-cool-btn" (click)="presentActionSheet(item.join_id)">
+            <div class="dots-container">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+            <span><ion-icon name="camera"></ion-icon></span>
+          </a>
+        </div>
+       
+</ion-content>

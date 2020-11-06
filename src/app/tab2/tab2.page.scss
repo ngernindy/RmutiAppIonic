@@ -1,0 +1,93 @@
+.bgcolor{
+    // background-color: #00C292;
+    --ion-background-color:#00C292;
+}
+.color{
+    --ion-colors-primary:#ffffff;
+    color: var(--ion-colors-primary);
+
+}
+ckeditor {
+    -webkit-user-select: text;
+    user-select: text
+}
+
+.tt{
+    font-size: 11px;
+}
+.ttt{
+    font-size: 14px;
+    --ion-colors-primary:#00000086;
+    color: var(--ion-colors-primary);
+
+}
+
+
+
+.bgg{
+background: #E9EBEE;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+  }
+
+
+.textcenter{
+    text-align: center;
+}
+
+.bgc{
+    background: rgb(28, 109, 230);
+}
+
+
+.myButton {
+	box-shadow:inset 50px 0px 17px -4px #9acc85;
+	background:linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%);
+	background-color:#74ad5a;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	font-weight:bold;
+	padding:1px 5px;
+	text-decoration:none;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #68a54b 5%, #74ad5a 100%);
+	background-color:#68a54b;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+
+.myButton1 {
+	box-shadow:inset 50px 0px 17px -4px #ebe720;
+	background:linear-gradient(to bottom, #eef125 5%, #def31c 100%);
+	background-color:#e0f525;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	font-weight:bold;
+	padding:1px 5px;
+	text-decoration:none;
+}
+.myButton1:hover {
+	background:linear-gradient(to bottom, #f5f117 5%, #ecf023 100%);
+	background-color:#e6f51e;
+}
+.myButton1:active {
+	position:relative;
+	top:1px;
+}

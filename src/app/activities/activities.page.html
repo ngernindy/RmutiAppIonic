@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar class="bgcolor color">
+    <ion-title>
+      กิจกรรม
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+
+  
+  <div class="ct">
+    <div class="container">
+      <ion-card *ngFor="let n of student">
+        <img src="assets/11.jpg" (click)="gogo(n.student_id,n.class_id)">
+        <div class="centered" (click)="gogo(n.student_id,n.class_id)">ตรวจสอบกิจกรรม</div>
+      </ion-card>
+      <!-- <ion-card *ngFor="let n of student">
+        <img src="assets/22.jpg"(click)="goCalculate(n.student_id,n.class_id)">
+        <div class="centered" (click)="goCalculate(n.student_id,n.class_id)"></div>
+
+      </ion-card> -->
+    </div>
+  </div>
+
+  
+  <!-- <ion-card *ngFor="let n of acttype">
+    
+      <div (click)="gogo(n.student_id,n.class_id)">
+        <ion-item>
+          <ion-button fill="outline" slot="start">ผ่านแล้ว</ion-button>
+        <ion-label>{{n.atttype_detail}}</ion-label>
+        </ion-item>
+      
+        <ion-card-content>
+         
+          This is content, without any paragraph or header tags,
+          within an ion-card-content element.
+        </ion-card-content>
+      </div>
+  </ion-card> -->
+
+   
+</ion-content>

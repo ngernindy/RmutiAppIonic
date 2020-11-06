@@ -1,0 +1,304 @@
+<ion-header>
+  <ion-toolbar class="bgcolor color">
+    <ion-title>ตรวจสอบกิจกรรม</ion-title>      
+  </ion-toolbar>
+</ion-header>
+
+
+
+ 
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-card (click)="gotoActHD()">
+    <div>
+      <ion-item>
+        <div *ngIf=" statusHD == '1'">
+          <ion-button fill="outline" slot="start" color="success">ผ่านแล้ว</ion-button>
+        </div>
+        <div *ngIf=" statusHD == '2'">
+          <ion-button fill="outline" slot="start" color="danger">ยังไม่ผ่าน</ion-button>
+        </div>    
+        <ion-label>&nbsp;&nbsp;เลือกเข้าร่วม - HD</ion-label>
+        <ion-icon name="bookmark" color="primary"></ion-icon>
+
+      </ion-item>
+    
+      <ion-card-content>
+
+        <div *ngIf=" class_id == 1">
+          <ion-icon name="medical" color="danger"></ion-icon><ion-label > {{NHD}}</ion-label>
+        </div>
+        <div *ngIf=" class_id == 2">
+          <ion-icon name="medical" color="danger"></ion-icon><ion-label > {{QHD}}</ion-label>
+        </div>
+        <br>
+        <div *ngIf=" statusHD == '1'">
+          <ion-icon name="checkmark"color="success"></ion-icon>
+          <ion-label color="success"> {{calTHD}}</ion-label>
+        </div>
+        <div *ngIf=" statusHD == '2'">
+          <ion-icon name="alert"color="danger"></ion-icon><ion-label color="danger"> {{calTHD}}</ion-label>
+        </div>
+        <br>
+        <ion-label class="tb">
+          กิจกรรมที่อนุมัติ {{COUNTHD}} กิจกรรม จำนวน {{HD}} หน่วย
+        </ion-label>
+      </ion-card-content>
+    </div>
+  </ion-card>
+
+  <ion-card (click)="gotoActAD()">
+    <div>
+      <ion-item>
+        <div *ngIf=" statusAD == '1'">
+          <ion-button fill="outline" slot="start" color="success">ผ่านแล้ว</ion-button>
+        </div>
+        <div *ngIf=" statusAD == '2'">
+          <ion-button fill="outline" slot="start" color="danger">ยังไม่ผ่าน</ion-button>
+        </div>    
+        <ion-label>&nbsp;&nbsp;เลือกเข้าร่วม - AD</ion-label>
+        <ion-icon name="bookmark" color="secondary"></ion-icon>
+
+      </ion-item>
+    
+      <ion-card-content>
+        <div *ngIf=" class_id == 1">
+          <ion-icon name="medical" color="danger"></ion-icon><ion-label > {{NAD}}</ion-label>
+        </div>
+       <div *ngIf=" class_id == 2">
+        <ion-icon name="medical" color="danger"></ion-icon><ion-label > {{QAD}}</ion-label>
+        </div>
+        <br>
+        <div *ngIf=" statusAD == '1'">
+          <ion-icon name="checkmark"color="success"></ion-icon><ion-label color="success"> {{calTAD}}</ion-label>
+        </div>
+        <div *ngIf=" statusAD == '2'">
+          <ion-icon name="alert"  color="danger"></ion-icon><ion-label color="danger"> {{calTAD}}</ion-label>
+        </div>
+        <br>
+        <ion-label class="tb">
+          กิจกรรมที่อนุมัติ {{COUNTAD}} กิจกรรม จำนวน {{AD}} หน่วย
+        </ion-label>
+      </ion-card-content>
+    </div>
+  </ion-card>
+
+  <ion-card (click)="gotoActMD()">
+    <div>
+      <ion-item>
+        <div *ngIf=" statusMD == '1'">
+          <ion-button fill="outline" slot="start" color="success">ผ่านแล้ว</ion-button>
+        </div>
+        <div *ngIf=" statusMD == '2'">
+          <ion-button fill="outline" slot="start" color="danger">ยังไม่ผ่าน</ion-button>
+        </div>    
+        <ion-label>&nbsp;&nbsp;เลือกเข้าร่วม - MD</ion-label>
+        <ion-icon name="bookmark" color="tertiary"></ion-icon>
+
+      </ion-item>
+    
+      <ion-card-content>
+
+        <div *ngIf=" class_id == 1">
+          <ion-icon name="medical" color="danger"></ion-icon><ion-label > {{NMD}}</ion-label>
+        </div>
+        <div *ngIf=" class_id == 2">
+          <ion-icon name="medical" color="danger"></ion-icon><ion-label > {{QMD}}</ion-label>
+        </div>
+        <br>
+        <div *ngIf=" statusMD == '1'">
+          <ion-icon name="checkmark"color="success"></ion-icon><ion-label color="success"> {{calTMD}}</ion-label>
+        </div>
+        <div *ngIf=" statusMD == '2'">
+          <ion-icon name="alert"  color="danger"></ion-icon><ion-label color="danger"> {{calTMD}}</ion-label>
+        </div>
+        <br>
+        <ion-label class="tb">
+          กิจกรรมที่อนุมัติ {{COUNTMD}} กิจกรรม จำนวน {{MD}} หน่วย
+        </ion-label>
+      </ion-card-content>
+    </div>
+  </ion-card>
+
+  <ion-card (click)="gotoActCD()">
+    <div>
+      <ion-item>
+        <div *ngIf=" statusCD == '1'">
+          <ion-button fill="outline" slot="start" color="success">ผ่านแล้ว</ion-button>
+        </div>
+        <div *ngIf=" statusCD == '2'">
+          <ion-button fill="outline" slot="start" color="danger">ยังไม่ผ่าน</ion-button>
+        </div>    
+        <ion-label>&nbsp;&nbsp;เลือกเข้าร่วม - CD</ion-label>
+        <ion-icon name="bookmark" color="success"></ion-icon>
+
+      </ion-item>
+      <ion-card-content>
+
+        <div *ngIf=" class_id == 1">
+          <ion-icon name="medical" color="danger"></ion-icon><ion-label > {{NCD}}</ion-label>
+        </div>
+        <div *ngIf=" class_id == 2">
+          <ion-icon name="medical" color="danger"></ion-icon><ion-label > {{QCD}}</ion-label>
+        </div>
+        <br>
+        <div *ngIf=" statusCD == '1'">
+          <ion-icon name="checkmark"color="success"></ion-icon><ion-label color="success"> {{calTCD}}</ion-label>
+        </div>
+        <div *ngIf=" statusCD == '2'">
+          <ion-icon name="alert"  color="danger"></ion-icon><ion-label color="danger"> {{calTCD}}</ion-label>
+        </div>
+        
+        <br>
+        <ion-label class="tb">
+          กิจกรรมที่อนุมัติ {{COUNTCD}} กิจกรรม จำนวน {{CD}} หน่วย
+        </ion-label>
+      </ion-card-content>
+    </div>
+  </ion-card>
+
+  <ion-card (click)="gotoActPD()">
+    <div>
+      <ion-item>
+        <div *ngIf=" statusPD == '1'">
+          <ion-button fill="outline" slot="start" color="success">ผ่านแล้ว</ion-button>
+        </div>
+        <div *ngIf=" statusPD == '2'">
+          <ion-button fill="outline" slot="start" color="danger">ยังไม่ผ่าน</ion-button>
+        </div>    
+        <ion-label>&nbsp;&nbsp;เลือกเข้าร่วม - PD</ion-label>
+        <ion-icon name="bookmark" color="warning"></ion-icon>
+
+      </ion-item>
+    
+      <ion-card-content>
+
+        <div *ngIf=" class_id == 1">
+          <ion-icon name="medical" color="danger"></ion-icon><ion-label > {{NPD}}</ion-label>
+        </div>
+        <div *ngIf=" class_id == 2">
+          <ion-icon name="medical" color="danger"></ion-icon><ion-label > {{QPD}}</ion-label>
+        </div>
+
+        <br>
+        <div *ngIf=" statusPD == '1'">
+          <ion-icon name="checkmark"color="success"></ion-icon><ion-label color="success"> {{calTPD}}</ion-label>
+        </div>
+        <div *ngIf=" statusPD == '2'">
+          <ion-icon name="alert"  color="danger"></ion-icon><ion-label color="danger"> {{calTPD}}</ion-label>
+        </div>
+        <br>
+        <ion-label class="tb">
+          กิจกรรมที่อนุมัติ {{COUNTPD}} กิจกรรม จำนวน {{PD}} หน่วย
+        </ion-label>
+      </ion-card-content>
+    </div>
+  </ion-card>
+
+  <ion-card (click)="gotoActBC()">
+        <div>
+          <ion-item>
+            <div *ngIf=" statusBC == '1'">
+              <ion-button fill="outline" slot="start" color="success">ผ่านแล้ว</ion-button>
+            </div>
+            <div *ngIf=" statusBC == '2'">
+              <ion-button fill="outline" slot="start" color="danger">ยังไม่ผ่าน</ion-button>
+            </div>        
+            <ion-label>&nbsp;&nbsp;กิจกรรมบังคับ</ion-label>
+            <ion-icon name="bookmark" color="danger"></ion-icon>
+
+          </ion-item>
+        
+          <ion-card-content>
+
+            <div *ngIf=" class_id == 1">
+              <ion-icon name="medical" color="danger"></ion-icon><ion-label > {{NBC}}</ion-label>
+            </div>
+            <div *ngIf=" class_id == 2">
+              <ion-icon name="medical" color="danger"></ion-icon><ion-label > {{QBC}}</ion-label>
+            </div>
+            <br>
+            <div *ngIf=" statusBC == '1'">
+              <ion-icon name="checkmark"color="success"></ion-icon><ion-label color="success"> {{calTBC}}</ion-label>
+            </div>
+            <div *ngIf=" statusBC == '2'">
+              <ion-icon name="alert"  color="danger"></ion-icon><ion-label color="danger"> {{calTBC}}</ion-label>
+            </div>
+            <br>
+            <ion-label class="tb">
+              กิจกรรมที่อนุมัติ {{COUNTBC}} กิจกรรม จำนวน {{BC}} หน่วย
+            </ion-label>
+          </ion-card-content>
+        </div>
+  </ion-card>
+
+  <ion-card (click)="gotoActBS()">
+      <div>
+        <ion-item>
+            <div *ngIf=" statusBS == '1'">
+              <ion-button fill="outline" slot="start" color="success">ผ่านแล้ว</ion-button>
+            </div>
+            <div *ngIf=" statusBS == '2'">
+              <ion-button fill="outline" slot="start" color="danger">ยังไม่ผ่าน</ion-button>
+            </div>
+        <ion-label>&nbsp;&nbsp;กิจกรรมบังคับเลือก</ion-label>
+        <ion-icon name="bookmark" color="medium"></ion-icon>
+        </ion-item>
+      
+        <ion-card-content>
+
+          <div *ngIf=" class_id == 1">
+            <ion-icon name="medical" color="danger"></ion-icon><ion-label > {{NBS}}</ion-label>
+          </div>
+          <div *ngIf=" class_id == 2">
+            <ion-icon name="medical" color="danger"></ion-icon><ion-label > {{QBS}}</ion-label>
+          </div>
+          <br>
+          <div *ngIf=" statusBS == '1'">
+            <ion-icon name="checkmark"color="success"></ion-icon><ion-label color="success"> {{calTBS}}</ion-label>
+          </div>
+          <div *ngIf=" statusBS == '2'">
+            <ion-icon name="alert"  color="danger"></ion-icon><ion-label color="danger"> {{calTBS}}</ion-label>
+          </div>
+          <br>
+          <ion-label class="tb">
+            กิจกรรมที่อนุมัติ {{COUNTBS}} กิจกรรม จำนวน {{BS}} หน่วย
+          </ion-label>
+        </ion-card-content>
+      </div>
+  </ion-card>
+
+
+  <ion-card>
+    <div>
+      <ion-item>
+          
+      <ion-label>สรุปกิจกรรมที่เข้าร่วมทั้งหมด</ion-label>
+      </ion-item>
+    
+      <ion-card-content>
+
+        <ion-icon name="medical" color="danger"></ion-icon> {{texttopic}}
+        <br>
+        <br>
+        <div *ngIf=" totalstatus == '1'">
+          <ion-icon name="checkmark"color="success"></ion-icon><ion-label color="success"> {{texttotal}}</ion-label>
+        </div>
+        <div *ngIf=" totalstatus == '2'">
+          <ion-icon name="alert"color="danger"></ion-icon><ion-label color="danger"> {{texttotal}}</ion-label>        
+        </div>
+        <br>
+        <ion-label class="tb">
+          รวมกิจกรรมที่อนุมัติ {{CTotal}} กิจกรรม {{SUMTotal}} หน่วย
+        </ion-label>
+      </ion-card-content>
+    </div>
+  </ion-card>
+
+
+
+  
+
+</ion-content>

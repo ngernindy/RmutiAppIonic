@@ -1,0 +1,32 @@
+<ion-content padding class="bgcolor" >
+  <div class="ct">
+    <img src="../assets/123.png" class="center">
+    <br>
+    <ion-list class="input">
+      <ion-card class="color1">
+      <ion-item >
+        <ion-label floating class="color">Username</ion-label>
+        <ion-input type="text"  [(ngModel)]="username" ></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label floating class="color">Password</ion-label>
+        <ion-input type="password"  [(ngModel)]="password" ></ion-input>
+      </ion-item>
+      </ion-card>
+      
+      <ion-grid >
+        <ion-row >
+          <ion-col>
+                <!-- <ion-button class="center" color="success" (click)="getLogin()">
+                  <ion-icon name="md-log-in"></ion-icon>
+                  เข้าสู่ระบบ
+                </ion-button> -->
+                    <ion-icon name="log-in"style="zoom:3.0;" class="center color1" (click)="getLogin()"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+  </div>
+ 
+</ion-content>

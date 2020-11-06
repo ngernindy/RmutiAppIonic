@@ -1,0 +1,526 @@
+<ion-header>
+  <ion-toolbar class="bgcolor color">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/seeact" (click)="goback()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>กิจกรรมที่เข้าร่วมแล้ว</ion-title>      
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!-- <ion-card>
+    <ion-card-header *ngFor="let n of BCtext"> 
+      <ion-card-title>{{n.topic}}</ion-card-title>
+      <ion-card-subtitle class="colorred">{{n.text2}}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card> -->
+
+<div *ngIf=" type_id == '1'">
+  <ion-card *ngFor="let n of HD"> 
+    <ion-card-header>
+      <ion-card-subtitle>{{n.activities_date | date: 'dd/MM/yyyy H:mm'}} น ถึง {{n.time_out | date: 'dd/MM/yyyy H:mm'}} น</ion-card-subtitle>
+      <ion-card-title>{{n.activities_topic}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-item>
+          <ion-icon name="key" slot="start"></ion-icon>
+          <ion-label>รหัสกิจกรรม  {{n.activities_id}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="bookmarks" slot="start"></ion-icon>
+          <ion-label>หน่วยกิต {{n.join_unit}}</ion-label>
+        </ion-item>
+       
+        <ion-item>
+            <ion-icon name="calendar" slot="start"></ion-icon>
+            <ion-label>ปีการศึกษา {{n.activities_year}}</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label class="ion-text-end">อนุมัติแล้ว</ion-label>
+          <ion-icon name="md-checkmark" slot="end"color="success"></ion-icon>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</div>
+
+<div *ngIf=" type_id == '2'">
+  <ion-card *ngFor="let n of AD"> 
+    <ion-card-header>
+      <ion-card-subtitle>{{n.activities_date | date: 'dd/MM/yyyy H:mm'}} น ถึง {{n.time_out | date: 'dd/MM/yyyy H:mm'}} น</ion-card-subtitle>
+      <ion-card-title>{{n.activities_topic}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-item>
+          <ion-icon name="key" slot="start"></ion-icon>
+          <ion-label>รหัสกิจกรรม  {{n.activities_id}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="bookmarks" slot="start"></ion-icon>
+          <ion-label>หน่วยกิต {{n.join_unit}}</ion-label>
+        </ion-item>
+       
+        <ion-item>
+            <ion-icon name="calendar" slot="start"></ion-icon>
+            <ion-label>ปีการศึกษา {{n.activities_year}}</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label class="ion-text-end">อนุมัติแล้ว</ion-label>
+          <ion-icon name="md-checkmark" slot="end"color="success"></ion-icon>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</div>
+
+
+<div *ngIf=" type_id == '3'">
+  <ion-card *ngFor="let n of MD"> 
+    <ion-card-header>
+      <ion-card-subtitle>{{n.activities_date | date: 'dd/MM/yyyy H:mm'}} น ถึง {{n.time_out | date: 'dd/MM/yyyy H:mm'}} น</ion-card-subtitle>
+      <ion-card-title>{{n.activities_topic}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-item>
+          <ion-icon name="key" slot="start"></ion-icon>
+          <ion-label>รหัสกิจกรรม  {{n.activities_id}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="bookmarks" slot="start"></ion-icon>
+          <ion-label>หน่วยกิต {{n.join_unit}}</ion-label>
+        </ion-item>
+       
+        <ion-item>
+            <ion-icon name="calendar" slot="start"></ion-icon>
+            <ion-label>ปีการศึกษา {{n.activities_year}}</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label class="ion-text-end">อนุมัติแล้ว</ion-label>
+          <ion-icon name="md-checkmark" slot="end"color="success"></ion-icon>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</div>
+
+<div *ngIf=" type_id == '4'">
+  <ion-card *ngFor="let n of CD"> 
+    <ion-card-header>
+      <ion-card-subtitle>{{n.activities_date | date: 'dd/MM/yyyy H:mm'}} น ถึง {{n.time_out | date: 'dd/MM/yyyy H:mm'}} น</ion-card-subtitle>
+      <ion-card-title>{{n.activities_topic}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-item>
+          <ion-icon name="key" slot="start"></ion-icon>
+          <ion-label>รหัสกิจกรรม  {{n.activities_id}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="bookmarks" slot="start"></ion-icon>
+          <ion-label>หน่วยกิต {{n.join_unit}}</ion-label>
+        </ion-item>
+       
+        <ion-item>
+            <ion-icon name="calendar" slot="start"></ion-icon>
+            <ion-label>ปีการศึกษา {{n.activities_year}}</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label class="ion-text-end">อนุมัติแล้ว</ion-label>
+          <ion-icon name="md-checkmark" slot="end"color="success"></ion-icon>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</div>
+
+<div *ngIf=" type_id == '5'">
+  <ion-card *ngFor="let n of PD"> 
+    <ion-card-header>
+      <ion-card-subtitle>{{n.activities_date | date: 'dd/MM/yyyy H:mm'}} น ถึง {{n.time_out | date: 'dd/MM/yyyy H:mm'}} น</ion-card-subtitle>
+      <ion-card-title>{{n.activities_topic}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-item>
+          <ion-icon name="key" slot="start"></ion-icon>
+          <ion-label>รหัสกิจกรรม  {{n.activities_id}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="bookmarks" slot="start"></ion-icon>
+          <ion-label>หน่วยกิต {{n.join_unit}}</ion-label>
+        </ion-item>
+       
+        <ion-item>
+            <ion-icon name="calendar" slot="start"></ion-icon>
+            <ion-label>ปีการศึกษา {{n.activities_year}}</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label class="ion-text-end">อนุมัติแล้ว</ion-label>
+          <ion-icon name="md-checkmark" slot="end"color="success"></ion-icon>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</div>
+
+<div *ngIf=" type_id == '6'">
+  <ion-card *ngFor="let n of BC"> 
+    <ion-card-header>
+      <ion-card-subtitle>{{n.activities_date | date: 'dd/MM/yyyy H:mm'}} น ถึง {{n.time_out | date: 'dd/MM/yyyy H:mm'}} น</ion-card-subtitle>
+      <ion-card-title>{{n.activities_topic}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-item>
+          <ion-icon name="key" slot="start"></ion-icon>
+          <ion-label>รหัสกิจกรรม  {{n.activities_id}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="bookmarks" slot="start"></ion-icon>
+          <ion-label>หน่วยกิต {{n.join_unit}}</ion-label>
+        </ion-item>
+       
+        <ion-item>
+            <ion-icon name="calendar" slot="start"></ion-icon>
+            <ion-label>ปีการศึกษา {{n.activities_year}}</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label class="ion-text-end">อนุมัติแล้ว</ion-label>
+          <ion-icon name="md-checkmark" slot="end"color="success"></ion-icon>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</div>
+
+
+<div *ngIf=" type_id == '7'">
+  <ion-card *ngFor="let n of BS"> 
+    <ion-card-header>
+      <ion-card-subtitle>{{n.activities_date | date: 'dd/MM/yyyy H:mm'}} น ถึง {{n.time_out | date: 'dd/MM/yyyy H:mm'}} น</ion-card-subtitle>
+      <ion-card-title>{{n.activities_topic}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-item>
+          <ion-icon name="key" slot="start"></ion-icon>
+          <ion-label>รหัสกิจกรรม  {{n.activities_id}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="bookmarks" slot="start"></ion-icon>
+          <ion-label>หน่วยกิต {{n.join_unit}}</ion-label>
+        </ion-item>
+       
+        <ion-item>
+            <ion-icon name="calendar" slot="start"></ion-icon>
+            <ion-label>ปีการศึกษา {{n.activities_year}}</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label class="ion-text-end">อนุมัติแล้ว</ion-label>
+          <ion-icon name="md-checkmark" slot="end"color="success"></ion-icon>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</div>
+
+  <!-- <ion-card>
+    <ion-card-header *ngFor="let n of BStext">
+      <ion-card-title>{{n.topic}}</ion-card-title>
+      <ion-card-subtitle class="colorred">{{n.text2}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            รหัส
+          </ion-col>
+          <ion-col>
+            ชื่อ
+          </ion-col>
+          <ion-col>
+            หน่วย
+          </ion-col>
+          <ion-col>
+            ปีการศึกษา
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngFor="let n of BS">
+          <ion-col>
+            {{n.activities_id}}
+          </ion-col>
+          <ion-col>
+            {{n.activities_topic}}
+          </ion-col>
+          <ion-col>
+            {{n.join_unit}}
+          </ion-col>
+          <ion-col>
+            {{n.activities_year}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-col text-right *ngFor="let n of COUNTBS">
+        อนุมัติการเข้าร่วม : {{n.countBS}} กิจกรรม
+      </ion-col>
+      <ion-col text-right *ngFor="let n of SUMBS">
+        จำนวนหน่วย: {{n.TotalBS}} หน่วย
+      </ion-col>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header *ngFor="let n of PDtext">
+      <ion-card-title>{{n.topic}}</ion-card-title>
+      <ion-card-subtitle>{{n.text1}}</ion-card-subtitle>
+      <ion-card-subtitle class="colorred">{{n.text2}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            รหัส
+          </ion-col>
+          <ion-col>
+            ชื่อ
+          </ion-col>
+          <ion-col>
+            หน่วย
+          </ion-col>
+          <ion-col>
+            ปีการศึกษา
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngFor="let n of PD">
+          <ion-col>
+            {{n.activities_id}}
+          </ion-col>
+          <ion-col>
+            {{n.activities_topic}}
+          </ion-col>
+          <ion-col>
+            {{n.join_unit}}
+          </ion-col>
+          <ion-col>
+            {{n.activities_year}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-col text-right *ngFor="let n of COUNTPD">
+        อนุมัติการเข้าร่วม : {{n.countPD}} กิจกรรม
+      </ion-col>
+      <ion-col text-right *ngFor="let n of SUMPD">
+        จำนวนหน่วย: {{n.TotalPD}} หน่วย
+      </ion-col>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header *ngFor="let n of HDtext">
+      <ion-card-title>{{n.topic}}</ion-card-title>
+      <ion-card-subtitle>{{n.text1}}</ion-card-subtitle>
+      <ion-card-subtitle class="colorred">{{n.text2}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            รหัส
+          </ion-col>
+          <ion-col>
+            ชื่อ
+          </ion-col>
+          <ion-col>
+            หน่วย
+          </ion-col>
+          <ion-col>
+            ปีการศึกษา
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngFor="let n of HD">
+          <ion-col>
+            {{n.activities_id}}
+          </ion-col>
+          <ion-col>
+            {{n.activities_topic}}
+          </ion-col>
+          <ion-col>
+            {{n.join_unit}}
+          </ion-col>
+          <ion-col>
+            {{n.activities_year}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-col text-right *ngFor="let n of COUNTHD">
+        อนุมัติการเข้าร่วม : {{n.countHD}} กิจกรรม
+      </ion-col>
+      <ion-col text-right *ngFor="let n of SUMHD">
+        จำนวนหน่วย: {{n.TotalHD}} หน่วย
+      </ion-col>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header *ngFor="let n of MDtext">
+      <ion-card-title>{{n.topic}}</ion-card-title>
+      <ion-card-subtitle>{{n.text1}}</ion-card-subtitle>
+      <ion-card-subtitle class="colorred">{{n.text2}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            รหัส
+          </ion-col>
+          <ion-col>
+            ชื่อ
+          </ion-col>
+          <ion-col>
+            หน่วย
+          </ion-col>
+          <ion-col>
+            ปีการศึกษา
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngFor="let n of MD">
+          <ion-col>
+            {{n.activities_id}}
+          </ion-col>
+          <ion-col>
+            {{n.activities_topic}}
+          </ion-col>
+          <ion-col>
+            {{n.join_unit}}
+          </ion-col>
+          <ion-col>
+            {{n.activities_year}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-col text-right *ngFor="let n of COUNTMD">
+        อนุมัติการเข้าร่วม : {{n.countMD}} กิจกรรม
+      </ion-col>
+      <ion-col text-right *ngFor="let n of SUMMD">
+        จำนวนหน่วย: {{n.TotalMD}} หน่วย
+      </ion-col>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header *ngFor="let n of CDtext">
+      <ion-card-title>{{n.topic}}</ion-card-title>
+      <ion-card-subtitle>{{n.text1}}</ion-card-subtitle>
+      <ion-card-subtitle class="colorred">{{n.text1}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col center text-center>
+            รหัส
+          </ion-col>
+          <ion-col center text-center>
+            ชื่อ
+          </ion-col>
+          <ion-col center text-center>
+            หน่วย
+          </ion-col>
+          <ion-col center text-center>
+            ปีการศึกษา
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngFor="let n of CD">
+          <ion-col center text-center>
+            {{n.activities_id}}
+          </ion-col>
+          <ion-col>
+            {{n.activities_topic}}
+          </ion-col>
+          <ion-col center text-center>
+            {{n.join_unit}}
+          </ion-col>
+          <ion-col center text-center>
+            {{n.activities_year}}
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+      <ion-col text-right *ngFor="let n of COUNTCD">
+        อนุมัติการเข้าร่วม : {{n.countCD}} กิจกรรม
+      </ion-col>
+      <ion-col text-right *ngFor="let n of SUMCD">
+        จำนวนหน่วย: {{n.TotalCD}} หน่วย
+      </ion-col>
+    </ion-card-content>
+  </ion-card>
+
+
+
+  <ion-card>
+    <ion-card-header *ngFor="let n of ADtext">
+      <ion-card-title>{{n.topic}}</ion-card-title>
+      <ion-card-subtitle>{{n.text1}}</ion-card-subtitle>
+      <ion-card-subtitle class="colorred">{{n.text2}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col center text-center>
+            รหัส
+          </ion-col>
+          <ion-col center text-center>
+            ชื่อ
+          </ion-col>
+          <ion-col center text-center>
+            หน่วย
+          </ion-col>
+          <ion-col center text-center>
+            ปีการศึกษา
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngFor="let n of AD">
+          <ion-col center text-center>
+            {{n.activities_id}}
+          </ion-col>
+          <ion-col>
+            {{n.activities_topic}}
+          </ion-col>
+          <ion-col center text-center>
+            {{n.join_unit}}
+          </ion-col>
+          <ion-col center text-center>
+            {{n.activities_year}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-col text-right *ngFor="let n of COUNTAD">
+        อนุมัติการเข้าร่วม : {{n.countAD}} กิจกรรม
+      </ion-col>
+      <ion-col text-right *ngFor="let n of SUMAD">
+        จำนวนหน่วย: {{n.TotalAD}} หน่วย
+      </ion-col>
+    </ion-card-content>
+  </ion-card> -->
+
+  <!-- <ion-card>
+    <ion-card-header>
+      <ion-card-title>อนุมัติการเข้าร่วม</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-card-subtitle class="colorred">ต้องเข้าร่วมกิจกรรมไม่น้อยกว่า : 100 หน่วย </ion-card-subtitle>
+      <ion-col text-right *ngFor="let n of COUNTTotal">
+        กิจกรรมที่เข้าร่วมทั้งหมด : {{n.countTotal}} กิจกรรม
+      </ion-col>
+      <br>
+      <ion-col text-right *ngFor="let n of SUMTotal">
+        จำนวนหน่วย: {{n.SumTotal}} หน่วย
+        
+      </ion-col>
+    </ion-card-content>
+  </ion-card> -->
+
+
+
+
+
+</ion-content>

@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar class="bgcolor color">
+    <ion-title>รายชื่อผู้เข้าร่วมกิจกรรม</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <!-- <ion-list>
+        <ion-item *ngFor="let n of join">
+          <ion-label>{{n.student_id}}   -   {{n.student_name}} {{n.student_lastname}}</ion-label>
+        </ion-item>    
+    </ion-list> -->
+
+
+    <ion-item *ngFor="let n of join">
+      <ion-avatar slot="start">
+        <ion-img src="http://192.168.43.170/WebProject/images/{{n.student_img}}"></ion-img>
+        <!-- <ion-img src="http://192.168.1.107/WebProject/images/{{n.student_img}}"></ion-img> -->
+      </ion-avatar>
+      <ion-label>{{n.student_name}} {{n.student_lastname}} </ion-label>
+      <div class="fonttt">{{n.date_time | date: 'dd/MM/yyyy H:mm'}}</div>
+
+    </ion-item>
+
+    
+</ion-content>

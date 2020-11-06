@@ -1,0 +1,40 @@
+$colors: (
+  primary:    #488aff,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #ffffff,
+  dark:       #222
+);
+.bgcolor{
+    // background-color: #00C292;
+    --ion-background-color:#00C292;
+}
+.color{
+    --ion-colors-primary:#c0c0c0;
+    color: var(--ion-colors-primary);
+
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+  }
+
+  .color1{
+    --ion-background-color:rgb(251, 251, 251);
+    --ion-colors-primary:#ffffff;
+
+    color: var(--ion-colors-primary);
+  
+  }
+  .ct{
+    // padding: 10%;
+    position: fixed;
+    width: 90%;
+    height: 70%;
+    bottom: 10px;
+    // border: 3px solid #8AC007;
+  }
+

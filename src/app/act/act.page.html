@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar class="bgcolor color">
+    <ion-title>เข้าร่วมกิจกรรม</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
+      <!-- <ion-list>
+        <ion-item *ngFor="let n of act" (click)="goToAct(n.activities_id,n.activities_topic,n.activities_unit,n.activities_term,n.activities_year,n.activities_date,n.time_out,n.atttype_id,n.lat,n.lng,n.act_status)">
+          <ion-icon name="ios-arrow-dropright" slot="start" ></ion-icon>
+          <ion-label>{{n.activities_topic}}</ion-label>
+          
+
+          <div *ngIf=" n.act_status == 1">
+              <ion-button fill="outline" slot="end" class="but" color="success">เข้าร่วม</ion-button>
+          </div>
+          <div *ngIf=" n.act_status == 0">
+              <ion-button fill="outline" slot="end" class="but2" color="danger">สิ้นสุด</ion-button>
+          </div>
+          
+        </ion-item>
+      </ion-list> -->
+
+      <ion-card *ngFor="let n of act" (click)="goToAct(n.activities_id,n.activities_topic,n.activities_unit,n.term_id,n.activities_year,n.activities_date,n.time_out,n.atttype_id,n.lat,n.lng,n.act_status)">
+        <ion-item>
+          <!-- <ion-icon name="pin" slot="start" color="danger"></ion-icon> -->
+          <ion-label>{{n.activities_topic}}</ion-label>
+          <div *ngIf=" n.act_status == 1">
+            <ion-button fill="outline" slot="end" class="but" color="success">เข้าร่วม</ion-button>
+          </div>
+          <div *ngIf=" n.act_status == 0">
+            <ion-button fill="outline" slot="end" class="but2" color="danger">สิ้นสุด</ion-button>
+          </div>
+        </ion-item>
+      
+        <ion-card-content>
+          วันที่ {{n.activities_date | date: 'dd/MM/yyyy H:mm' }} ถึง {{n.time_out | date: 'dd/MM/yyyy H:mm' }} 
+         
+        </ion-card-content>
+      </ion-card>
+
+      
+      
+      
+
+
+
+      
+      
+</ion-content>

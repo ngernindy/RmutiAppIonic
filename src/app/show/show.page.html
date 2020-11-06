@@ -1,0 +1,97 @@
+<!-- <ion-header>
+  <ion-toolbar class="bgcolor color">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/profile"></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let n of act">
+      {{n.activities_topic}}
+      {{n.atttype_id}}
+
+      <div *ngIf=" n.atttype_id == n.atttype_id">
+          {{n.atttype_id}}
+      </div>
+
+  </ion-card> -->
+
+  <ion-header>
+      <ion-toolbar class="bgcolor color">
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/tabs/activities"></ion-back-button>
+        </ion-buttons>
+        <ion-title>ตรวจสอบกิจกรม</ion-title>      
+      </ion-toolbar>
+    </ion-header>
+    
+    <ion-content>
+    
+    
+     
+    
+    
+    
+      <ion-card  >
+        <!-- <ion-card-header *ngFor="let n of ADtext">
+          <ion-card-title>{{n.topic}}</ion-card-title>
+          <ion-card-subtitle>{{n.text1}}</ion-card-subtitle>
+          <ion-card-subtitle class="colorred">{{n.text2}}</ion-card-subtitle>
+        </ion-card-header> -->
+        <ion-card-content  >
+          <ion-grid  >
+            <ion-row>
+              <ion-col center text-center>
+                รหัส
+              </ion-col>
+              <ion-col center text-center>
+                ชื่อ
+              </ion-col>
+              <ion-col center text-center>
+                หน่วย
+              </ion-col>
+              <ion-col center text-center>
+                ปีการศึกษา
+              </ion-col>
+            </ion-row>
+            <div *ngFor="let n of act">
+            <ion-row >
+              <ion-col center text-center>
+                {{n.activities_id}}
+              </ion-col>
+              <ion-col>
+                {{n.activities_topic}}
+              </ion-col>
+              <ion-col center text-center>
+                {{n.activities_unit}}
+              </ion-col>
+              <ion-col center text-center>
+                {{n.activities_year}}
+              </ion-col>
+            </ion-row>
+            </div>
+          </ion-grid>
+          <!-- <ion-col text-right *ngFor="let n of COUNTAD">
+            อนุมัติการเข้าร่วม : {{n.countAD}} กิจกรรม
+          </ion-col>
+          <ion-col text-right *ngFor="let n of SUMAD">
+            จำนวนหน่วย: {{n.TotalAD}} หน่วย
+          </ion-col> -->
+        </ion-card-content>
+      </ion-card>
+    
+    
+    
+    </ion-content>
+  
+
+ 
+
+
+
+
+  
+

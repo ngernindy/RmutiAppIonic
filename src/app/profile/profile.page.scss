@@ -1,0 +1,21 @@
+
+  ion-avatar{
+    height: 166px !important;
+    width: 166px !important;
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    align-items: center;
+    margin: auto;
+    display: block;
+    }
+
+    .bgcolor{
+      // background-color: #00C292;
+      --ion-background-color:#00C292;
+  }
+  .color{
+      --ion-colors-primary:#ffffff;
+      color: var(--ion-colors-primary);
+  
+  }

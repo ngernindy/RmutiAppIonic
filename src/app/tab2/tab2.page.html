@@ -1,0 +1,153 @@
+<ion-header>
+  <ion-toolbar class="bgcolor color">
+    <ion-title>
+      ข่าวกิจกรรม
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+      <!-- Segment with secondary color -->
+      <ion-segment [(ngModel)]="newstype" color="secondary">
+        <ion-segment-button value="total">
+          <ion-label class="tt">ข่าวทั้งหมด</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="PR">
+          <ion-label class="tt">ข่าวประชาสัมพันธ์</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="Act">
+          <ion-label class="tt">ข่าวกิจกรรม</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+
+      <div [ngSwitch]="newstype">
+      
+        
+        <ion-list *ngSwitchCase="'total'">
+
+          
+          
+            <ion-list *ngFor="let n of news"  (click)="goToNewsdetail(n.news_id,n.news_filename,n.news_topic,n.news_detail,n.news_date)">
+              <div *ngIf=" n.show_status == '1'">
+                <!-- <ion-img src="http://192.168.1.107/WebProject/news_image/{{n.news_filename}}"></ion-img> -->
+                <ion-img src="http://192.168.43.170/WebProject/news_image/{{n.news_filename}}"></ion-img>
+
+            
+                <ion-card-content>
+                  <ion-card-title>
+                    <ion-label >{{n.news_topic}}</ion-label>
+                  
+                  </ion-card-title>
+                  <br>
+                  <div class="textcenter">
+                      <div *ngIf=" n.newstype_id == 001">
+                          <a class="myButton1">ข่าวประชาสัมพันธ์</a>
+                      </div>
+                      <div *ngIf=" n.newstype_id == 002">
+                          <a class="myButton">ข่าวกิจกรรม</a>
+                      </div>
+                    
+                  </div>
+
+                
+                </ion-card-content>
+                <div class="textcenter">
+                  <ion-icon name="time"></ion-icon>
+                </div>
+                
+                <div class="textcenter">
+                  <ion-label class="ttt">{{ n.news_date | date:'dd/M/yyyy' }}</ion-label>
+                </div>
+              </div>
+              <div *ngIf=" n.show_status == '0'">
+              </div>
+            </ion-list>
+          
+
+            
+          
+
+
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'PR'">
+
+          
+            <ion-list *ngFor="let n of news_PR" (click)="goToNewsdetail(n.news_id,n.news_filename,n.news_topic,n.news_detail,n.news_date)">
+              <div *ngIf="n.show_status == '1'">  
+                <!-- <ion-img src="http://192.168.1.107/WebProject/news_image/{{n.news_filename}}"></ion-img> -->
+                <ion-img src="http://192.168.43.170/WebProject/news_image/{{n.news_filename}}"></ion-img>
+            
+            
+                <ion-card-content>
+                  <ion-card-title>
+                    {{n.news_topic}}
+                  </ion-card-title>
+                  <br>
+                  <div class="textcenter">
+                      <div *ngIf=" n.newstype_id == 001">
+                          <a class="myButton1">ข่าวประชาสัมพันธ์</a>
+                      </div>
+                      <div *ngIf=" n.newstype_id == 002">
+                          <a class="myButton">ข่าวกิจกรรม</a>
+                      </div>
+                  </div>
+
+                
+                </ion-card-content>
+                <div class="textcenter">
+                  <ion-label class="ttt">{{ n.news_date | date:'dd/M/yyyy' }}</ion-label>
+                </div>
+              </div>
+              <div *ngIf="n.show_status == '0'">
+              </div>
+            </ion-list>
+          
+  
+  
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'Act'">
+
+              <ion-list *ngFor="let n of news_Act" (click)="goToNewsdetail(n.news_id,n.news_filename,n.news_topic,n.news_detail,n.news_date)">
+                <div *ngIf=" n.show_status == '1'">
+                  <!-- <ion-img src="http://192.168.1.107/WebProject/news_image/{{n.news_filename}}"></ion-img> -->
+                  <ion-img src="http://192.168.43.170/webProject/news_image/{{n.news_filename}}"></ion-img>
+              
+              
+                  <ion-card-content>
+                    <ion-card-title>
+                      {{n.news_topic}}
+                    </ion-card-title>
+                    <br>
+                    <div class="textcenter">
+                        <div *ngIf=" n.newstype_id == 001">
+                            <a class="myButton1">ข่าวประชาสัมพันธ์</a>
+                        </div>
+                        <div *ngIf=" n.newstype_id == 002">
+                            <a class="myButton">ข่าวกิจกรรม</a>
+                        </div>
+                    </div>
+                  </ion-card-content>
+                  <div class="textcenter">
+                    <ion-label class="ttt">{{ n.news_date | date:'dd/M/yyyy' }}</ion-label>
+                  </div>
+                </div>
+                <div *ngIf="n.show_status == '0'">
+                </div>
+              </ion-list>
+            
+  
+  
+        </ion-list>
+      </div>
+      
+      
+      
+
+ 
+  
+</ion-content>

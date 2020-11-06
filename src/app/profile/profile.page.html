@@ -1,0 +1,101 @@
+<ion-header>
+ 
+  <ion-toolbar *ngFor="let n of student" class="bgcolor color">
+    <ion-buttons slot="primary">
+      <ion-button color="secondary"
+        (click)="gogo()">
+        <ion-icon slot="icon-only" name="md-create"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>ฉัน</ion-title>
+  </ion-toolbar>
+
+
+
+
+
+
+
+</ion-header>
+
+
+
+<ion-app>
+    
+      
+
+  <ion-content fullscreen>
+    
+
+    <br><br><br><br><br>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+
+    <ion-list lines="full" class="ion-no-margin ion-no-padding" *ngFor="let n of student">
+      <ion-avatar (click)="presentActionSheet()">
+        <!-- <ion-img src="http://192.168.1.107/WebProject/images/{{n.student_img}}"></ion-img> -->
+        <ion-img src="http://192.168.43.170/WebProject/images/{{n.student_img}}"></ion-img>
+
+      </ion-avatar>
+
+      
+
+
+      <br><br>
+
+
+      <ion-item>
+        
+        <ion-icon name="card"></ion-icon>
+        &nbsp;&nbsp;
+        <ion-label>{{n.student_id}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="ios-person"></ion-icon>
+        &nbsp;
+        {{n.student_name}} {{n.student_lastname}}
+      </ion-item>
+      <ion-item>
+        <ion-icon name="calendar"></ion-icon>
+        &nbsp;
+        {{n.year_id}}
+      </ion-item>
+      <ion-item>
+        <ion-icon name="school"></ion-icon>
+        &nbsp;
+        {{n.subject_name}}
+      </ion-item>
+      <ion-item>
+        <ion-icon name="contacts"></ion-icon>
+        &nbsp;
+        {{n.group_detaill}}
+      </ion-item>
+      <ion-item>
+        <ion-icon name="phone-portrait"></ion-icon>
+        &nbsp;
+        {{n.student_telephone}}
+      </ion-item>
+      <ion-item>
+        <ion-icon name="mail"></ion-icon>
+        &nbsp;
+        {{n.student_email}}
+      </ion-item>
+      <ion-item>
+        <ion-icon name="home"></ion-icon>
+        &nbsp;
+        {{n.student_address}}
+      </ion-item>
+
+      
+
+    </ion-list>
+   
+
+
+
+
+  </ion-content>
+
+</ion-app>
